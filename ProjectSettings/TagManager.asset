@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FxTemporaire
   - diamante
+  - tiro
+  - dano
   layers:
   - Default
   - TransparentFX

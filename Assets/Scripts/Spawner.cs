@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject Asteroide2; // Objeto a ser spawnado
     public Transform spawnPoint; // Ponto de spawn dos objetos
     public float minSpawnInterval = 1f; // Intervalo mínimo de tempo entre os spawns
-    public float maxSpawnInterval = 3f; // Intervalo máximo de tempo entre os spawns
+    public float maxSpawnInterval = 4f; // Intervalo máximo de tempo entre os spawns
 
     private float timer = 0f; // Timer para controlar o intervalo entre os spawns
     private float spawnInterval; // Intervalo de tempo atual entre os spawns

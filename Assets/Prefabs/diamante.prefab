@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3338008184770331018}
   - component: {fileID: 486553549831269119}
   - component: {fileID: 7315904908018181416}
+  - component: {fileID: -3263995627052752492}
   m_Layer: 0
   m_Name: diamante
   m_TagString: Untagged
@@ -140,3 +141,17 @@ MonoBehaviour:
   force: 1
   rotateSpeed: 180
   destroyDelay: 5
+--- !u!114 &-3263995627052752492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693779584015992013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695d8c5b2edfd3e4795b84e3bd972218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 1
+  fx: {fileID: 0}
