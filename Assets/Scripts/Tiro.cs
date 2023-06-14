@@ -14,11 +14,12 @@ public class Tiro : MonoBehaviour
         uimanager = FindObjectOfType<UIManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
+            //UIManager.instance.SetScore();
             Destroy(gameObject);
             Instantiate(fx, transform.position, Quaternion.identity);
         }

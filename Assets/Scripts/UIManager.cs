@@ -11,13 +11,15 @@ public class UIManager : MonoBehaviour
     public TMP_Text txtScore;
     public TMP_Text txtLives;
 
-    public GameObject fx;
+    private int totalScore;
 
     public GameObject Player;
 
 
     int Score = 0;
     int Lives = 3;
+
+    public static UIManager instance;
 
     private void Start()
     {
@@ -30,6 +32,9 @@ public class UIManager : MonoBehaviour
         Score += value;
         txtScore.text = Score.ToString();
 
+        totalScore++;
+
+        PlayerPrefs.SetInt("score", totalScore);
     }
 
     public void SetSLives(int value)
@@ -39,7 +44,6 @@ public class UIManager : MonoBehaviour
 
         if (Lives <= 0)
         {
-            Instantiate(fx, transform.position, Quaternion.identity);
             Destroy(Player.gameObject);
             GameOver();
         }

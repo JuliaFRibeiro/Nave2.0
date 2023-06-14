@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Controle : MonoBehaviour
 {
+    public FixedJoystick moveJoystick;
     public Rigidbody2D oRigidbody2D;
+    private float moveH, moveV, speedMove= 5;
 
     public GameObject laser;
     public Transform LaserSpaw;
@@ -16,12 +18,10 @@ public class Controle : MonoBehaviour
 
     public bool playerAtirador;
 
-    private Vector2 teclasApertadas;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        oRigidbody2D = GetComponent <Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -37,8 +37,14 @@ public class Controle : MonoBehaviour
 
     private void MovimentarJogador()
     {
-        teclasApertadas = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        oRigidbody2D.velocity = teclasApertadas * VelocidadeDaNave;
+        moveH = moveJoystick.Horizontal;
+        moveV = moveJoystick.Vertical;
+        Vector2 dir = new Vector2(moveH, moveV);
+        oRigidbody2D.velocity = new Vector3(moveH * speedMove, oRigidbody2D.velocity.y, moveV* speedMove);
+        if (dir != Vector2.zero) 
+        {
+            transform.LookAt(transform.position);
+        }
     }
 
     private void AtirarLaiser()
