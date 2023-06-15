@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject Asteroide1; // Objeto a ser spawnado
     public GameObject Asteroide2; // Objeto a ser spawnado
+    public GameObject Gema;
     public Transform spawnPoint; // Ponto de spawn dos objetos
     public float minSpawnInterval = 1f; // Intervalo mínimo de tempo entre os spawns
     public float maxSpawnInterval = 4f; // Intervalo máximo de tempo entre os spawns
@@ -43,6 +44,7 @@ public class Spawner : MonoBehaviour
         // Instancia o objeto a ser spawnado no ponto de spawn
         Instantiate(Asteroide1, spawnPoint.position, spawnPoint.rotation);
         Instantiate(Asteroide2, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(Gema, spawnPoint.position, spawnPoint.rotation);
     }
 
     private void SetRandomSpawnInterval()
